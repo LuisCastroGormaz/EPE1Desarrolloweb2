@@ -1,13 +1,13 @@
 :root {
     color-scheme: light;
-    --navy: #0c3858;
-    --navy-dark: #082d49;
-    --orange: #ff6845;
-    --orange-dark: #e85434;
-    --ink: #123b5d;
-    --muted: #60768b;
-    --background: #f4f7fb;
-    --border: #d9e2eb;
+    --navy: #1a1a1a;
+    --navy-dark: #000000;
+    --orange: #ffd400;
+    --orange-dark: #e6bc00;
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --background: #f7f7f7;
+    --border: #e2e2e2;
     --white: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -91,7 +91,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-    color: #ffd0c4;
+    color: var(--orange);
 }
 
 .navbar-toggler {
@@ -102,17 +102,31 @@ main {
     overflow: hidden;
 }
 
+/* Hero con foto de fondo y overlay oscuro para mantener el texto legible */
 .hero {
-    padding: 5.5rem 1rem 4.5rem;
+    position: relative;
+    padding: 6.5rem 1rem 5.5rem;
     text-align: center;
+    background-image:
+        linear-gradient(180deg, transparent 80%, var(--background) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+        url("../assets/fondo.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    color: var(--white);
 }
 
 .hero h1 {
     max-width: 700px;
     margin: 0 auto 1rem;
-    color: var(--ink);
+    color: var(--white);
     font-size: clamp(2rem, 5vw, 3.25rem);
     line-height: 1.12;
+}
+
+.hero .hero-lede {
+    color: rgba(255, 255, 255, 0.88);
 }
 
 .hero-lede,
@@ -151,7 +165,7 @@ h2 {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 8px 22px rgba(18, 59, 93, 0.05);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
 .card-service {
@@ -166,7 +180,7 @@ h2 {
 
 .service-time {
     margin: 0 0 0.85rem;
-    color: var(--orange-dark);
+    color: var(--ink);
     font-size: 0.9rem;
     font-weight: 700;
 }
@@ -185,7 +199,7 @@ h2 {
 }
 
 .service-features li::marker {
-    color: var(--orange);
+    color: var(--orange-dark);
 }
 
 button {
@@ -214,7 +228,7 @@ button {
 .btn-secondary:hover,
 .btn-link-toggle:hover {
     border-color: var(--navy);
-    background: #edf3f8;
+    background: #f2f2f2;
 }
 
 .btn-link-toggle {
@@ -277,8 +291,8 @@ button {
 
 .form-control:focus,
 .form-select:focus {
-    outline: 3px solid rgba(255, 104, 69, 0.2);
-    border-color: var(--orange);
+    outline: 3px solid rgba(255, 212, 0, 0.35);
+    border-color: var(--orange-dark);
 }
 
 .form-actions {
@@ -292,7 +306,7 @@ button {
     padding: 0.75rem 1.25rem;
     border: 1px solid var(--orange);
     background: var(--orange);
-    color: var(--white);
+    color: var(--navy);
     font-weight: 700;
 }
 
@@ -314,7 +328,7 @@ button {
 footer {
     padding: 1.75rem 1rem;
     background: var(--navy-dark);
-    color: #d8e5ef;
+    color: #e2e2e2;
     font-size: 0.85rem;
 }
 
