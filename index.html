@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- navegación -->
+
+<body>
+    <header class="site-header">
+        <nav class="navbar-expand container">
+            <a class="navbar-brand" href="#top">
+                <span class="marca">PG</span>
+                <span class="nombre">asistente de envio</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav gap-md-3">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formulario">Cotizar envío</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resultado">Resultado</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <!-- seccion 1 titulo -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <h1 id="hero-title">Elige un servicio, completa los datos y recibe una recomendación al instante.</h1>
+            <p class="hero-lede">Descubre las mejores opciones para tu envío.</p>
+        </section>
+        <!-- seccion 2 servicios -->
+        <section id="servicios" class="services container" aria-labelledby="servicios-titulo">
+            <h2 id="servicios-titulo">Nuestros Servicios</h2>
+            <p class="services-lede">Ofrecemos una variedad de servicios de envío para satisfacer tus necesidades.</p>
+            <div class="row g-4 services-grid">
+                <div class="col-12 col-md-4">
+                    <article class="card-service" data-service="basico" tabindex="0">
+                        <h3>Básico</h3>
+                        <p class="service-time">3 a 5 días hábiles</p>
+                        <p class="service-desc">La alternativa más económica para envíos sin urgencia.</p>
+                        <ul class="service-features">
+                            <li>Seguimiento por número de OT</li>
+                            <li>Cobertura nacional</li>
+                            <li>Ideal para paquetería liviana</li>
+                        </ul>
+                        <button type="button" class="btn-select" data-select="basico">
+                            Elegir Básico
+                        </button>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="card-service" data-service="prioritario" tabindex="0">
+                        <h3>Prioritario</h3>
+                        <p class="service-time">Día hábil siguiente &middot; antes de las 13:00</p>
+                        <p class="service-desc">La opción más rápida, sujeta a cobertura y condiciones.</p>
+                        <ul class="service-features">
+                            <li>Entrega en horario de mañana</li>
+                            <li>Prioridad en ruta de reparto</li>
+                            <li>Sujeto a cobertura y condiciones</li>
+                        </ul>
+                        <button type="button" class="btn-select" data-select="prioritario">
+                            Elegir Prioritario
+                        </button>
+                    </article>
+                </div>
+
+            </div>
+
+            <button type="button" class="btn-link-toggle" id="toggleDetails" aria-expanded="false"
+                aria-controls="extraDetails">
+                Ver condiciones adicionales
+            </button>
+
+            <div id="extraDetails" class="extra-details" hidden>
+                <p>
+                    Los plazos son referenciales y pueden variar según el destino, la disponibilidad de cobertura
+                    y las condiciones logísticas del día. El servicio Prioritario no está disponible para todas las
+                    comunas del país.
+                </p>
+            </div>
+        </section>
+        <!-- seccion 3 formulario-->
+        <section id="formulario" class="quote container" aria-labelledby="form-title">
+            <h2 id="form-title">Cotizar mi envío</h2>
+            <p class="section-lede">Completa los datos de tu encomienda para recibir una sugerencia de servicio.</p>
+
+            <form id="shipmentForm" novalidate>
+
+                <div class="row g-3">
+
+                    <div class="col-12 col-md-6">
+                        <label for="origen" class="form-label">Origen</label>
+                        <input type="text" id="origen" name="origen" class="form-control" required
+                            placeholder="Ej: Santiago">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="destino" class="form-label">Destino</label>
+                        <input type="text" id="destino" name="destino" class="form-control" required
+                            placeholder="Ej: Concepción">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="tipoEnvio" class="form-label">Tipo de envío</label>
+                        <select id="tipoEnvio" name="tipoEnvio" class="form-select" required>
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="documentos">Documentos</option>
+                            <option value="paquete">Paquete</option>
+                            <option value="fragil">Frágil</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="urgencia" class="form-label">Nivel de urgencia</label>
+                        <select id="urgencia" name="urgencia" class="form-select" required>
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="baja">Baja</option>
+                            <option value="media">Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <label for="peso" class="form-label">Peso (kg)</label>
+                        <input type="number" id="peso" name="peso" class="form-control" required min="0.1" step="0.1"
+                            placeholder="0.0">
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <label for="largo" class="form-label">Largo (cm)</label>
+                        <input type="number" id="largo" name="largo" class="form-control" required min="1" step="1"
+                            placeholder="0">
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <label for="ancho" class="form-label">Ancho (cm)</label>
+                        <input type="number" id="ancho" name="ancho" class="form-control" required min="1" step="1"
+                            placeholder="0">
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <label for="alto" class="form-label">Alto (cm)</label>
+                        <input type="number" id="alto" name="alto" class="form-control" required min="1" step="1"
+                            placeholder="0">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="form-control" required
+                            placeholder="nombre@correo.com">
+                    </div>
+
+                </div>
+
+                <input type="hidden" id="servicioElegido" name="servicioElegido" value="">
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Obtener recomendación</button>
+                    <button type="reset" class="btn-secondary" id="clearForm">Limpiar formulario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
