@@ -25,8 +25,8 @@
             <div class="collapse navbar-collapse justify-content-end" id="navMenu">
                 <ul class="navbar-nav gap-md-3">
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#formulario">Cotizar envío</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resultado">Resultado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formulario">Cotizar el envío</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resultado">Resultados</a></li>
                 </ul>
             </div>
         </nav>
@@ -35,7 +35,7 @@
     <main id="top">
         <!-- seccion 1 titulo -->
         <section class="hero" aria-labelledby="hero-title">
-            <h1 id="hero-title">Elige un servicio, completa los datos y recibe una recomendación al instante.</h1>
+            <h1 id="hero-title">Elige el servicio, completa con tus datos y recibe una recomendación al instante.</h1>
             <p class="hero-lede">Descubre las mejores opciones para tu envío.</p>
         </section>
         <!-- seccion 2 servicios -->
@@ -43,25 +43,42 @@
             <h2 id="servicios-titulo">Nuestros Servicios</h2>
             <p class="services-lede">Ofrecemos una variedad de servicios de envío para satisfacer tus necesidades.</p>
             <div class="row g-4 services-grid">
+
                 <div class="col-12 col-md-4">
                     <article class="card-service" data-service="basico" tabindex="0">
-                        <h3>Básico</h3>
+                        <h3>Servicio Básico</h3>
                         <p class="service-time">3 a 5 días hábiles</p>
-                        <p class="service-desc">La alternativa más económica para envíos sin urgencia.</p>
+                        <p class="service-desc">La alternativa más económica para tus envíos sin urgencia.</p>
                         <ul class="service-features">
                             <li>Seguimiento por número de OT</li>
                             <li>Cobertura nacional</li>
                             <li>Ideal para paquetería liviana</li>
                         </ul>
                         <button type="button" class="btn-select" data-select="basico">
-                            Elegir Básico
+                            Elegir Servicio Básico
+                        </button>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="card-service" data-service="estandar" tabindex="0">
+                        <h3>Servicio Estándar</h3>
+                        <p class="service-time">Día hábil siguiente &middot; horario PM</p>
+                        <p class="service-desc">Un punto intermedio entre costo y velocidad de entrega.</p>
+                        <ul class="service-features">
+                            <li>Entrega en menos de 24 horas</li>
+                            <li>Seguimiento por número de OT</li>
+                            <li>Recomendado para envíos moderados</li>
+                        </ul>
+                        <button type="button" class="btn-select" data-select="estandar">
+                            Elegir Servicio Estándar
                         </button>
                     </article>
                 </div>
 
                 <div class="col-12 col-md-4">
                     <article class="card-service" data-service="prioritario" tabindex="0">
-                        <h3>Prioritario</h3>
+                        <h3>Servicio Prioritario</h3>
                         <p class="service-time">Día hábil siguiente &middot; antes de las 13:00</p>
                         <p class="service-desc">La opción más rápida, sujeta a cobertura y condiciones.</p>
                         <ul class="service-features">
@@ -70,7 +87,7 @@
                             <li>Sujeto a cobertura y condiciones</li>
                         </ul>
                         <button type="button" class="btn-select" data-select="prioritario">
-                            Elegir Prioritario
+                            Elegir Servicio Prioritario
                         </button>
                     </article>
                 </div>
@@ -92,7 +109,7 @@
         </section>
         <!-- seccion 3 formulario-->
         <section id="formulario" class="quote container" aria-labelledby="form-title">
-            <h2 id="form-title">Cotizar mi envío</h2>
+            <h2 id="form-title">Cotizar el envío</h2>
             <p class="section-lede">Completa los datos de tu encomienda para recibir una sugerencia de servicio.</p>
 
             <form id="shipmentForm" novalidate>
